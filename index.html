@@ -1,167 +1,337 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma como português brasileiro -->
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apartamento à Venda - Porto Itália Canoas</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<style>
-  .lb-close {
-    display: block !important;
-    position: absolute;
-    top: 20px !important;
-    right: 20px !important;
-    z-index: 1050 !important;
-    font-size: 28px !important;
-    color: white !important;
-    background: rgba(0,0,0,0.6);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 38px;
-    text-decoration: none;
-  }
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres para UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Garante que o layout seja responsivo em dispositivos móveis -->
+  <title>Apartamento à Venda - Porto Itália Canoas</title> <!-- Título da aba do navegador -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" /> <!-- Ícone da aba (favicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" /> <!-- Importa os estilos do plugin Lightbox para visualização de imagens -->
 
-  .lb-prev, .lb-next {
-    display: block !important;
-    font-size: 48px !important;
-    color: white !important;
-    z-index: 1050 !important;
-    text-shadow: 0 0 8px black;
-  }
-
-  .lb-prev { left: 10px !important; }
-  .lb-next { right: 10px !important; }
-
-  .lb-nav {
-    opacity: 1 !important;
-    z-index: 1050 !important;
-  }
-
-  .lb-data .lb-close {
-    display: block !important;
-  }
-</style>
-
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
   <style>
+    /* Estilo personalizado para o botão de fechar do Lightbox */
     .lb-close {
-      top: 10px !important;
-      right: 10px !important;
-      background: white;
-      color: black;
-      border-radius: 50%;
-      padding: 6px 12px;
-      font-size: 24px;
-      font-weight: bold;
-      opacity: 1 !important;
-      z-index: 9999;
-      cursor: pointer;
-    }
-    .lb-prev, .lb-next {
-      opacity: 1 !important;
-      font-size: 48px !important;
-      z-index: 9999;
+      display: block !important;
+      position: absolute;
+      top: 20px !important;
+      right: 20px !important;
+      z-index: 1050 !important;
+      font-size: 28px !important;
       color: white !important;
-      text-shadow: 0 0 5px black;
-      transition: all 0.3s ease;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 38px;
+      text-decoration: none;
     }
-    .lb-prev:hover, .lb-next:hover { color: #25D366 !important; }
-    .lb-prev { left: 30px !important; }
-    .lb-next { right: 30px !important; }
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #000; }
-    header { background-color: #0C3C78; color: white; padding: 60px 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    header h1 { font-size: 36px; margin-bottom: 10px; }
-    header p { font-size: 18px; opacity: 0.9; }
-    section { padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
-    h2 { font-size: 24px; margin-bottom: 20px; color: #0C3C78; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
-    h3 { font-size: 20px; color: #0C3C78; margin: 40px 0 10px; }
-    .cta { background-color: #ffffff; padding: 30px 20px; text-align: center; border-radius: 12px; margin: 30px auto; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .cta a { background-color: #25D366; color: white; padding: 14px 28px; font-size: 18px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: background-color 0.3s ease; }
-    .cta a:hover { background-color: #1ebe5d; }
-    .info-box { background: #ffffff; padding: 20px; margin: 20px 0; border-left: 6px solid #0C3C78; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 16px; }
-    .gallery-group { padding: 25px; border-radius: 12px; margin-bottom: 40px; background-color: #f2f2f2; }
-    .gallery { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
-    .gallery a { flex: 1 1 calc(25% - 16px); max-width: calc(25% - 16px); }
-    .gallery img { width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s ease; }
-    .gallery img:hover { transform: scale(1.02); }
+
+    /* Estilo das setas de navegação do Lightbox */
+    .lb-prev, .lb-next {
+      display: block !important;
+      font-size: 48px !important;
+      color: white !important;
+      z-index: 1050 !important;
+      text-shadow: 0 0 8px black;
+    }
+
+    /* Posição das setas */
+    .lb-prev { left: 10px !important; }
+    .lb-next { right: 10px !important; }
+
+    .lb-nav { opacity: 1 !important; z-index: 1050 !important; }
+    .lb-data .lb-close { display: block !important; }
+
+    /* Estilo geral do corpo da página */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #000;
+    }
+
+    /* Estilo do cabeçalho com imagem de fundo */
+    header {
+      background: url('fotos/Fachada.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Título principal */
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    /* Subtítulo */
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* Seções principais da página */
+    section {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Títulos de seção */
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #0C3C78;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    /* Subtítulos */
+    h3 {
+      font-size: 20px;
+      color: #0C3C78;
+      margin: 40px 0 10px;
+    }
+
+    /* Bloco de chamada para ação */
+    .cta {
+      background-color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin: 30px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Botão do WhatsApp */
+    .cta a {
+      background-color: #25D366;
+      color: white;
+      padding: 14px 28px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Hover do botão */
+    .cta a:hover {
+      background-color: #1ebe5d;
+    }
+
+    /* Bloco de informação visual */
+    .info-box {
+      background: #ffffff;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 6px solid #0C3C78;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-size: 16px;
+    }
+
+    /* Agrupamento de galeria */
+    .gallery-group {
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      background-color: #f2f2f2;
+    }
+
+    /* Layout de galeria */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    /* Estilo dos links das imagens */
+    .gallery a {
+      flex: 1 1 calc(25% - 16px);
+      max-width: calc(25% - 16px);
+    }
+
+    /* Estilo das imagens */
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    /* Zoom leve ao passar o mouse */
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Responsividade para tablets */
     @media(max-width: 768px) {
-      .gallery a { flex: 1 1 calc(50% - 16px); max-width: calc(50% - 16px); }
+      .gallery a {
+        flex: 1 1 calc(50% - 16px);
+        max-width: calc(50% - 16px);
+      }
     }
+
+    /* Responsividade para celulares */
     @media(max-width: 480px) {
-      .gallery a { flex: 1 1 100%; max-width: 100%; }
+      .gallery a {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Apartamento à venda no Porto Itália - Canoas/RS</h1>
-    <p>Conforto, segurança e ótima localização para você viver bem com sua família.</p>
-  </header>
-  <section class="cta">
-    <a href="https://wa.me/5551982291713?text=Olá%2C+tenho+interesse+no+apartamento+do+Porto+Itália!">📞 Falar via WhatsApp</a>
+
+  <!-- Cabeçalho com imagem e título -->
+  <!-- HEADER AJUSTADO: imagem maior, overlay escuro e texto centralizado -->
+<header style="
+  position: relative;
+  background: url('fotos/Fachada.jpg') no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+">
+  <!-- Camada escura sobre a imagem para melhorar o contraste do texto -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+  "></div>
+
+  <!-- Texto do cabeçalho com destaque -->
+  <div style="position: relative; z-index: 2; padding: 0 20px;">
+    <h1 style="font-size: 38px; margin-bottom: 15px; font-weight: 700;">Apartamento à venda no Porto Itália - Canoas/RS</h1>
+    <p style="font-size: 22px; margin: 0; font-weight: 400;">Conforto, segurança e ótima localização para você viver bem com sua família.</p>
+  </div>
+</header>
+
+  <!-- Seção de chamada para ação -->
+  <section class="cta" style="text-align: center; margin-top: 30px;">
+    <p style="font-size: 18px; color: #333; margin-bottom: 15px; font-weight: bold;">
+      Interessado no apartamento? Estamos à disposição para te ajudar.
+    </p>
+    <a href="https://wa.me/5551982291713?text=Olá%2C+tenho+interesse+no+apartamento+do+Porto+Itália!">
+      💬 Entrar em contato via WhatsApp
+    </a>
+    <p style="margin-top: 10px; font-size: 15px; color: #0070C0;">
+      Qualquer dúvida, fale conosco pelo WhatsApp 💬
+    </p>
   </section>
-  <section><h2>📸 Fotos do imóvel</h2>
-<h3>🏢 Fachada e áreas externas</h3>
-<div class="gallery-group"><div class="gallery">
-  <a href="fotos/Visão do Condomino.jpg" data-lightbox="externas" data-title="Visão do Condomino.jpg"><img src="fotos/Visão do Condomino.jpg" alt="Visão do Condomino.jpg"></a>
-  <a href="fotos/Patio Estacionamento.jpg" data-lightbox="externas" data-title="Patio Estacionamento.jpg"><img src="fotos/Patio Estacionamento.jpg" alt="Patio Estacionamento.jpg"></a>
-  <a href="fotos/Pracinha.jpg" data-lightbox="externas" data-title="Pracinha.jpg"><img src="fotos/Pracinha.jpg" alt="Pracinha.jpg"></a>
-  <a href="fotos/Entrada Bloco.jpg" data-lightbox="externas" data-title="Entrada Bloco.jpg"><img src="fotos/Entrada Bloco.jpg" alt="Entrada Bloco.jpg"></a>
-  <a href="fotos/Entrada Carro Condominio.jpg" data-lightbox="externas" data-title="Entrada Carro Condominio.jpg"><img src="fotos/Entrada Carro Condominio.jpg" alt="Entrada Carro Condominio.jpg"></a>
-  <a href="fotos/Entrada Condominio.jpg" data-lightbox="externas" data-title="Entrada Condominio.jpg"><img src="fotos/Entrada Condominio.jpg" alt="Entrada Condominio.jpg"></a>
-</div></div>
 
-<h3>🎉 Áreas comuns do condomínio</h3>
-<div class="gallery-group"><div class="gallery">
-  <a href="fotos/Salão de Festa.jpg" data-lightbox="comuns" data-title="Salão de Festa.jpg"><img src="fotos/Salão de Festa.jpg" alt="Salão de Festa.jpg"></a>
-  <a href="fotos/Salão de Festa 2.jpg" data-lightbox="comuns" data-title="Salão de Festa 2.jpg"><img src="fotos/Salão de Festa 2.jpg" alt="Salão de Festa 2.jpg"></a>
-  <a href="fotos/Entrada Salão de Festa.jpg" data-lightbox="comuns" data-title="Entrada Salão de Festa.jpg"><img src="fotos/Entrada Salão de Festa.jpg" alt="Entrada Salão de Festa.jpg"></a>
-  <a href="fotos/Area de Churrasqueira.jpg" data-lightbox="comuns" data-title="Area de Churrasqueira.jpg"><img src="fotos/Area de Churrasqueira.jpg" alt="Area de Churrasqueira.jpg"></a>
-</div></div>
+  <!-- Galeria de fotos do imóvel -->
+  <section>
+    <h2>📸 Fotos do imóvel</h2>
 
-<h3>🏠 Interior do apartamento</h3>
-<div class="gallery-group"><div class="gallery">
-  <a href="fotos/Entrada sala.jpg" data-lightbox="internas" data-title="Entrada sala.jpg"><img src="fotos/Entrada sala.jpg" alt="Entrada sala.jpg"></a>
-  <a href="fotos/Sala e Entrada.jpg" data-lightbox="internas" data-title="Sala e Entrada.jpg"><img src="fotos/Sala e Entrada.jpg" alt="Sala e Entrada.jpg"></a>
-  <a href="fotos/Sala e Cozinha.jpg" data-lightbox="internas" data-title="Sala e Cozinha.jpg"><img src="fotos/Sala e Cozinha.jpg" alt="Sala e Cozinha.jpg"></a>
-  <a href="fotos/Cozinha Inteira.jpg" data-lightbox="internas" data-title="Cozinha Inteira.jpg"><img src="fotos/Cozinha Inteira.jpg" alt="Cozinha Inteira.jpg"></a>
-  <a href="fotos/Cozinha.jpg" data-lightbox="internas" data-title="Cozinha.jpg"><img src="fotos/Cozinha.jpg" alt="Cozinha.jpg"></a>
-  <a href="fotos/Quarto Casal.jpg" data-lightbox="internas" data-title="Quarto Casal.jpg"><img src="fotos/Quarto Casal.jpg" alt="Quarto Casal.jpg"></a>
-  <a href="fotos/Foto Quarto - Filho.jpg" data-lightbox="internas" data-title="Foto Quarto - Filho.jpg"><img src="fotos/Foto Quarto - Filho.jpg" alt="Foto Quarto - Filho.jpg"></a>
-  <a href="fotos/Banheiro.jpg" data-lightbox="internas" data-title="Banheiro.jpg"><img src="fotos/Banheiro.jpg" alt="Banheiro.jpg"></a>
-</div></div>
+    <!-- Fotos externas -->
+    <div class="gallery-group">
+      <div class="gallery">
+        <!-- Cada imagem é clicável e abre em zoom (Lightbox) -->
+        <a href="fotos/Visão do Condomino.jpg" data-lightbox="externas" data-title="Visão do Condomino.jpg"><img src="fotos/Visão do Condomino.jpg" alt=""></a>
+        <a href="fotos/Patio Estacionamento.jpg" data-lightbox="externas" data-title="Patio Estacionamento.jpg"><img src="fotos/Patio Estacionamento.jpg" alt=""></a>
+        <a href="fotos/Pracinha.jpg" data-lightbox="externas" data-title="Pracinha.jpg"><img src="fotos/Pracinha.jpg" alt=""></a>
+        <a href="fotos/Entrada Bloco.jpg" data-lightbox="externas" data-title="Entrada Bloco.jpg"><img src="fotos/Entrada Bloco.jpg" alt=""></a>
+        <a href="fotos/Entrada Carro Condominio.jpg" data-lightbox="externas" data-title="Entrada Carro Condominio.jpg"><img src="fotos/Entrada Carro Condominio.jpg" alt=""></a>
+        <a href="fotos/Entrada Condominio.jpg" data-lightbox="externas" data-title="Entrada Condominio.jpg"><img src="fotos/Entrada Condominio.jpg" alt=""></a>
+      </div>
+    </div>
 
-</section>
+    <!-- Áreas comuns -->
+    <h3>🎉 Áreas comuns do condomínio</h3>
+    <div class="gallery-group">
+      <div class="gallery">
+        <a href="fotos/Salão de Festa.jpg" data-lightbox="comuns" data-title="Salão de Festa.jpg"><img src="fotos/Salão de Festa.jpg" alt=""></a>
+        <a href="fotos/Salão de Festa 2.jpg" data-lightbox="comuns" data-title="Salão de Festa 2.jpg"><img src="fotos/Salão de Festa 2.jpg" alt=""></a>
+        <a href="fotos/Entrada Salão de Festa.jpg" data-lightbox="comuns" data-title="Entrada Salão de Festa.jpg"><img src="fotos/Entrada Salão de Festa.jpg" alt=""></a>
+        <a href="fotos/Area de Churrasqueira.jpg" data-lightbox="comuns" data-title="Area de Churrasqueira.jpg"><img src="fotos/Area de Churrasqueira.jpg" alt=""></a>
+      </div>
+    </div>
+
+    <!-- Interior do apartamento -->
+    <h3>🏠 Interior do apartamento</h3>
+    <div class="gallery-group">
+      <div class="gallery">
+        <a href="fotos/Entrada sala.jpg" data-lightbox="internas" data-title="Entrada sala.jpg"><img src="fotos/Entrada sala.jpg" alt=""></a>
+        <a href="fotos/Sala e Entrada.jpg" data-lightbox="internas" data-title="Sala e Entrada.jpg"><img src="fotos/Sala e Entrada.jpg" alt=""></a>
+        <a href="fotos/Sala e Cozinha.jpg" data-lightbox="internas" data-title="Sala e Cozinha.jpg"><img src="fotos/Sala e Cozinha.jpg" alt=""></a>
+        <a href="fotos/Cozinha Inteira.jpg" data-lightbox="internas" data-title="Cozinha Inteira.jpg"><img src="fotos/Cozinha Inteira.jpg" alt=""></a>
+        <a href="fotos/Cozinha.jpg" data-lightbox="internas" data-title="Cozinha.jpg"><img src="fotos/Cozinha.jpg" alt=""></a>
+        <a href="fotos/Quarto Casal.jpg" data-lightbox="internas" data-title="Quarto Casal.jpg"><img src="fotos/Quarto Casal.jpg" alt=""></a>
+        <a href="fotos/Foto Quarto - Filho.jpg" data-lightbox="internas" data-title="Foto Quarto - Filho.jpg"><img src="fotos/Foto Quarto - Filho.jpg" alt=""></a>
+        <a href="fotos/Banheiro.jpg" data-lightbox="internas" data-title="Banheiro.jpg"><img src="fotos/Banheiro.jpg" alt=""></a>
+      </div>
+    </div>
+
+    <!-- Vídeo do apartamento -->
+    <h3>📽️ Interior do apartamento - Vídeo:</h3>
+    <div class="info-box" style="text-align: center;">
+      <video controls width="100%" style="max-width: 480px; height: 270px; border-radius: 12px;">
+        <source src="fotos/Video Apartamento Completo.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+    </div>
+  </section>
+
+  <!-- Informações técnicas -->
   <section>
     <h2>🧾 Sobre o apartamento</h2>
     <div class="info-box">
       <p>✔️ 2 dormitórios<br>✔️ 1 banheiro com box de vidro<br>✔️ 1 vaga de garagem<br>✔️ 41 m² privativos<br>✔️ 2º Andar, bem ventilado<br>✔️ Piso laminado novo<br>✔️ Ventilador de teto na sala e quartos</p>
     </div>
+
     <h2>🏢 Condomínio</h2>
     <div class="info-box">
       <p>✔️ Portaria 24h Eletrônica<br>✔️ Salão de festas<br>✔️ Churrasqueira<br>✔️ Playground<br>✔️ Zelador<br>✔️ Ambiente familiar e seguro</p>
     </div>
   </section>
+
+  <!-- Endereço -->
   <section>
     <h2>📍 Localização</h2>
     <div class="info-box">
-      <p>Localizado no bairro Estância Velha, Canoas/RS. Próximo a escolas, supermercados, farmácias e transporte público.<br>Rua: Rosinha dos Santos Cardoso, Nº 196, Apto 203, Bloco 04.</p>
+      <p>
+        <strong>Localizado no bairro:</strong> Estância Velha, Canoas/RS.<br>
+        <strong>Rua:</strong> Rosinha dos Santos Cardoso, Nº 196, Apto 203, Bloco 04.<br>
+        <strong>Condomínio:</strong> Porto Itália
+      </p>
     </div>
   </section>
+
+  <!-- Valores -->
   <section>
     <h2>💰 Valores</h2>
     <div class="info-box">
       <p><strong>Valor de venda:</strong> R$ 190.000,00<br><strong>Condomínio:</strong> R$ 230,00<br><strong>IPTU:</strong> R$ 330,00</p>
     </div>
   </section>
+
+  <!-- Chamada final de contato -->
   <section class="cta">
     <h2>📞 Contato</h2>
     <p>Quer agendar uma visita ou tirar dúvidas?</p>
     <a href="https://wa.me/5551982291713?text=Olá%2C+tenho+interesse+no+apartamento+do+Porto+Itália!">Conversar no WhatsApp</a>
   </section>
+
+  <!-- Scripts necessários para funcionamento do Lightbox -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
 </body>
 </html>
